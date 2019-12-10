@@ -15,7 +15,6 @@ from multiprocessing.dummy import Pool as ThreadPool
 # URLs (replace with url from custom search)
 #sOVERVIEW_URL = r'http://www.zoopla.co.uk/for-sale/property/london/?include_retirement_homes=true&include_shared_ownership=true&new_homes=include&price_max=3000000&price_min=250000&q=London&results_sort=newest_listings&search_source=for-sale'
 sOVERVIEW_URL = r'http://www.zoopla.co.uk/for-sale/property/london/?include_retirement_homes=true&include_shared_ownership=true&new_homes=include&price_max=1000000&price_min=350000&q=London&results_sort=newest_listings&search_source=home'
-
 # pages to scrape
 iMAX_PAGES = 80 # max 400 # change based on number of pages to scrape
 
@@ -285,6 +284,7 @@ class dataset:
         if loadExisting:
             try:
                 print('Loaded %s' % fileName)
+
                 self.data = pd.read_excel(fileName)
             except FileNotFoundError:
                 print('%s not found' % fileName)
